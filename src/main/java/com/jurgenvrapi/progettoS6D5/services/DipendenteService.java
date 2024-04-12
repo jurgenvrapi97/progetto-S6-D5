@@ -22,6 +22,7 @@ public class DipendenteService {
     }
 
 
+
     public Dipendente findById(Long id) {
         return dipendenteRepository.findById(id).orElseThrow(() -> new NotFoundException(String.valueOf(id)));
     }
