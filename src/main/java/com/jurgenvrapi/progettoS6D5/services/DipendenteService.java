@@ -7,6 +7,8 @@ import com.jurgenvrapi.progettoS6D5.repositories.DipendenteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DipendenteService {
 
@@ -21,7 +23,9 @@ public class DipendenteService {
         return dipendenteRepository.save(body);
     }
 
-
+    public List<Dipendente> findAll() {
+        return dipendenteRepository.findAll();
+    }
 
     public Dipendente findById(Long id) {
         return dipendenteRepository.findById(id).orElseThrow(() -> new NotFoundException(String.valueOf(id)));

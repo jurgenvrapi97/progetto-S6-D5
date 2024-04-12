@@ -3,6 +3,7 @@ package com.jurgenvrapi.progettoS6D5.controllers;
 import com.jurgenvrapi.progettoS6D5.entities.Dispositivo;
 import com.jurgenvrapi.progettoS6D5.services.DispositivoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +15,7 @@ public class DispositivoController {
     private DispositivoService dispositivoService;
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Dispositivo> createDispositivo(@RequestBody Dispositivo dispositivo) {
         return ResponseEntity.ok(dispositivoService.save(dispositivo));
     }

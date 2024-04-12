@@ -20,7 +20,7 @@ public class Dipendente {
     private String email;
     private String avatar;
 
-    @OneToMany(mappedBy = "dipendente")
+    @OneToMany(mappedBy = "dipendente",fetch = FetchType.EAGER)
     private Set<Dispositivo> dispositivi;
 }
 
